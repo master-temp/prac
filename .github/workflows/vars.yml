@@ -17,4 +17,4 @@ jobs:
                   echo "Config var | Version is ${{ vars.VERSION }}"
                   echo "Context var | Repo Name is ${{ github.repository }}"
                   echo "Secret | Secret Key is ${{ secrets.KEY }}"
-                  ${{ secrets.KEY }}
+
