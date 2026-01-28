@@ -4,6 +4,8 @@ on:
     push:
         branches: [main]
 
+    workflow_dispatch:
+
 jobs:
     test-self-hosted:
         runs-on: self-hosted # yaha magic hai: self-hosted label
