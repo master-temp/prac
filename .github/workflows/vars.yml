@@ -1,0 +1,19 @@
+name: Environment Variables and Secret
+
+on: workflow_dispatch
+
+env:
+    baseapi: https://baseapi.demo/
+
+jobs:
+    greeting_job:
+        runs-on: ubuntu-latest
+        env:
+            author: master
+        steps:
+            - name: "Basic Info"
+              run: |
+                  echo "Workflow var | $baseapi by $author}"
+                  echo "Config var | Version is ${{ vars.VERSION }}"
+                  echo "Context var | Repo Name is ${{ github.repository }}"
+                  echo "Secret | Secret Key is ${{ secrets.KEY }}"
