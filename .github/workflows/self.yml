@@ -1,0 +1,19 @@
+name: Test Self Hosted Runner
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    test-self-hosted:
+        runs-on: self-hosted # yaha magic hai: self-hosted label
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Show system info
+              run: |
+                  uname -a
+                  sw_vers
+                  python3 --version || echo "Python not found"
